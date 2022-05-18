@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container {
+  width: 500px;
+  height: 300px;
+  margin: 8px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .slider {
+  height: 300px;
+  width: 600%;
+  list-style: none;
+}
+
+.container .slider li {
+  width: 500px;
+  height: 300px;
+}
+
+.container .slider li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container .btn-bottom {
+  width: 300px;
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  height: 30px;
+  transform: translateX(-50%);
+  line-height: 30px;
+  text-align: center;
+}
+
+.container .btn-bottom span {
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  cursor: pointer;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.container .btn-bottom .active {
+  background: #ffa4ff;
+}
+
+.container .btn-left,
+.container .btn-right {
+  width: 70px;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  font-size: 30px;
+  line-height: 300px;
+  text-align: center;
+}
+.container .btn-left:hover > div,
+.container .btn-right:hover > div {
+  display: block;
+}
+
+.container .btn-left > div,
+.container .btn-right > div {
+  width: 70px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  cursor: pointer;
+}
+.container .btn-left > div::after,
+.container .btn-right > div::after {
+  content: "<";
+  display: inline-block;
+}
+.container .btn-right > div::after {
+  content: ">";
+}
+.container .btn-right {
+  right: 0;
+  left: auto;
+}
